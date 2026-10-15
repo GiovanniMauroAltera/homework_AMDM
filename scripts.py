@@ -370,3 +370,14 @@ def merge_the_tools(string, k):
                 result = result + letter
 
         print(result)
+
+
+# Introduction to Sets
+def average(array):
+    distinct = set(array)
+
+    total = sum(distinct)
+    how_many = len(distinct)
+    result = total / how_many
+
+    return round(result, 3)
