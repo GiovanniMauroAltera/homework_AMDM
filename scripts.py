@@ -574,3 +574,116 @@ def check_strict_superset():
             result = False
 
     print(result)
+
+
+# collections.Counter()
+def collections_counter():
+    from collections import Counter
+
+    x = int(input())
+    sizes = list(map(int, input().split()))
+    n = int(input())
+
+    shoes = Counter(sizes)
+
+    money = 0
+
+    for i in range(n):
+        size, price = map(int, input().split())
+
+        if shoes[size] > 0:
+            money = money + price
+            shoes[size] = shoes[size] - 1
+
+    print(money)
+
+
+# DefaultDict Tutorial
+def defaultdict_tutorial():
+    from collections import defaultdict
+
+    n, m = map(int, input().split())
+
+    positions = defaultdict(list)
+
+    for i in range(1, n + 1):
+        word = input()
+        positions[word].append(i)
+
+    for j in range(m):
+        word = input()
+
+        if word in positions:
+            result = ""
+            for p in positions[word]:
+                result = result + str(p) + " "
+            print(result.strip())
+        else:
+            print(-1)
+
+
+# Collections.namedtuple()
+def collections_namedtuple():
+    from collections import namedtuple
+
+    n = int(input())
+    columns = input().split()
+
+    Student = namedtuple("Student", columns)
+
+    total = 0
+
+    for i in range(n):
+        values = input().split()
+        student = Student(*values)
+        total = total + int(student.MARKS)
+
+    average = total / n
+
+    print("%.2f" % average)
+
+
+# Collections.OrderedDict()
+def collections_ordereddict():
+    from collections import OrderedDict
+
+    n = int(input())
+
+    items = OrderedDict()
+
+    for i in range(n):
+        parts = input().split()
+        price = int(parts[-1])
+        name = " ".join(parts[:-1])
+
+        if name in items:
+            items[name] = items[name] + price
+        else:
+            items[name] = price
+
+    for name in items:
+        print(name, items[name])
+
+
+# Collections.deque()
+def collections_deque():
+    from collections import deque
+
+    n = int(input())
+
+    d = deque()
+
+    for i in range(n):
+        line = input().split()
+        command = line[0]
+
+        if command == "append":
+            d.append(int(line[1]))
+        elif command == "appendleft":
+            d.appendleft(int(line[1]))
+        elif command == "pop":
+            d.pop()
+        elif command == "popleft":
+            d.popleft()
+
+    print(" ".join(map(str, d)))
