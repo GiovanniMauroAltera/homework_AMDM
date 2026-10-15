@@ -1,11 +1,3 @@
-# Homework 1 - HackerRank Python exercises
-# Each exercise is a function. On HackerRank the input is read in the
-# provided stub code, here the reading is inside the function so that
-# the file does not run by itself.
-
-
-# ---------------------------------------------------------------- Introduction
-
 def python_if_else():
     n = int(input().strip())
 
@@ -44,8 +36,6 @@ def print_function():
         print(i, end="")
     print()
 
-
-# ----------------------------------------------------------------- Data types
 
 def list_comprehensions():
     x = int(input())
@@ -142,8 +132,6 @@ def lists():
 
 
 def tuples():
-    # Note: on HackerRank this exercise expects an old hash() value,
-    # so it is marked as failed even if the code is correct.
     n = int(input())
     numbers = input().split()
 
@@ -155,8 +143,6 @@ def tuples():
 
     print(hash(t))
 
-
-# -------------------------------------------------------------------- Strings
 
 def swap_case(s):
     result = ""
@@ -302,12 +288,10 @@ def print_rangoli(size):
     rows = []
 
     for i in range(size):
-        # letters going down from the biggest one to the i-th one
         left = []
         for j in range(size - 1, size - 2 - i, -1):
             left.append(letters[j])
 
-        # left part + the same part going back (without repeating the center)
         all_letters = left + left[-2::-1]
 
         row = "-".join(all_letters)
@@ -322,7 +306,6 @@ def print_rangoli(size):
 
 
 def solve(s):
-    # Capitalize!
     words = s.split(" ")
     new_words = []
 
