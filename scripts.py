@@ -781,3 +781,25 @@ def ginorts():
     even.sort()
 
     print("".join(lower + upper + odd + even))
+
+
+# Map and Lambda Function
+cube = lambda x: x ** 3
+
+
+def fibonacci(n):
+    numbers = []
+
+    a = 0
+    b = 1
+
+    for i in range(n):
+        numbers.append(a)
+        a, b = b, a + b
+
+    return numbers
+
+
+def map_and_lambda():
+    n = int(input())
+    print(list(map(cube, fibonacci(n))))
