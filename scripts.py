@@ -985,3 +985,44 @@ def depth(elem, level):
 
     for child in elem:
         depth(child, level)
+
+
+# Standardize Mobile Number Using Decorators
+def wrapper(f):
+    def fun(l):
+        new_list = []
+
+        for number in l:
+            last_ten = number[-10:]
+            new_number = "+91 " + last_ten[:5] + " " + last_ten[5:]
+            new_list.append(new_number)
+
+        return f(new_list)
+    return fun
+
+
+@wrapper
+def sort_phone(l):
+    print(*sorted(l), sep='\n')
+
+
+# Decorators 2 - Name Directory
+def person_lister(f):
+    def inner(people):
+        def get_age(person):
+            return int(person[2])
+
+        sorted_people = sorted(people, key=get_age)
+
+        result = []
+
+        for person in sorted_people:
+            result.append(f(person))
+
+        return result
+    return inner
+
+
+@person_lister
+def name_format(person):
+    return ("Mr. " if person[3] == "M" else "Ms. ") + person[0] + " " + person[1]
