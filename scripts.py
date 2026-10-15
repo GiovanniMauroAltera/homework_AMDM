@@ -687,3 +687,31 @@ def collections_deque():
             d.popleft()
 
     print(" ".join(map(str, d)))
+
+
+# Time Delta
+def time_delta(t1, t2):
+    from datetime import datetime
+
+    form = "%a %d %b %Y %H:%M:%S %z"
+
+    time1 = datetime.strptime(t1, form)
+    time2 = datetime.strptime(t2, form)
+
+    difference = abs(time1 - time2)
+    seconds = int(difference.total_seconds())
+
+    return str(seconds)
+
+
+# Calendar Module
+def calendar_module():
+    import calendar
+
+    month, day, year = map(int, input().split())
+
+    number = calendar.weekday(year, month, day)
+
+    days = ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"]
+
+    print(days[number])
