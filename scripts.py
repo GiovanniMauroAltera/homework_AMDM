@@ -381,3 +381,196 @@ def average(array):
     result = total / how_many
 
     return round(result, 3)
+
+
+# No Idea!
+def no_idea():
+    n, m = map(int, input().split())
+    array = list(map(int, input().split()))
+    A = set(map(int, input().split()))
+    B = set(map(int, input().split()))
+
+    happiness = 0
+
+    for number in array:
+        if number in A:
+            happiness = happiness + 1
+        elif number in B:
+            happiness = happiness - 1
+
+    print(happiness)
+
+
+# Symmetric Difference
+def symmetric_difference():
+    m = int(input())
+    a = set(map(int, input().split()))
+    n = int(input())
+    b = set(map(int, input().split()))
+
+    result = a.symmetric_difference(b)
+    result = sorted(result)
+
+    for number in result:
+        print(number)
+
+
+# Set .add()
+def set_add():
+    n = int(input())
+
+    countries = set()
+
+    for i in range(n):
+        name = input()
+        countries.add(name)
+
+    print(len(countries))
+
+
+# Set .discard(), .remove() & .pop()
+def set_discard_remove_pop():
+    n = int(input())
+    s = set(map(int, input().split()))
+
+    num_commands = int(input())
+
+    for i in range(num_commands):
+        line = input().split()
+        command = line[0]
+
+        if command == "pop":
+            s.pop()
+        elif command == "remove":
+            value = int(line[1])
+            s.remove(value)
+        elif command == "discard":
+            value = int(line[1])
+            s.discard(value)
+
+    print(sum(s))
+
+
+# Set .union() Operation
+def set_union():
+    n = int(input())
+    english = set(map(int, input().split()))
+
+    b = int(input())
+    french = set(map(int, input().split()))
+
+    all_students = english.union(french)
+
+    print(len(all_students))
+
+
+# Set .intersection() Operation
+def set_intersection():
+    n = int(input())
+    english = set(map(int, input().split()))
+
+    b = int(input())
+    french = set(map(int, input().split()))
+
+    both = english.intersection(french)
+
+    print(len(both))
+
+
+# Set .difference() Operation
+def set_difference():
+    n = int(input())
+    english = set(map(int, input().split()))
+
+    b = int(input())
+    french = set(map(int, input().split()))
+
+    only_english = english.difference(french)
+
+    print(len(only_english))
+
+
+# Set .symmetric_difference() Operation
+def set_symmetric_difference():
+    n = int(input())
+    english = set(map(int, input().split()))
+
+    b = int(input())
+    french = set(map(int, input().split()))
+
+    one_only = english.symmetric_difference(french)
+
+    print(len(one_only))
+
+
+# Set Mutations
+def set_mutations():
+    a_size = int(input())
+    A = set(map(int, input().split()))
+
+    n = int(input())
+
+    for i in range(n):
+        line = input().split()
+        command = line[0]
+
+        other = set(map(int, input().split()))
+
+        if command == "update":
+            A.update(other)
+        elif command == "intersection_update":
+            A.intersection_update(other)
+        elif command == "difference_update":
+            A.difference_update(other)
+        elif command == "symmetric_difference_update":
+            A.symmetric_difference_update(other)
+
+    print(sum(A))
+
+
+# The Captain's Room
+def captains_room():
+    k = int(input())
+    rooms = input().split()
+
+    counts = {}
+
+    for room in rooms:
+        if room in counts:
+            counts[room] = counts[room] + 1
+        else:
+            counts[room] = 1
+
+    for room in counts:
+        if counts[room] == 1:
+            print(room)
+
+
+# Check Subset
+def check_subset():
+    t = int(input())
+
+    for i in range(t):
+        size_a = int(input())
+        A = set(input().split())
+
+        size_b = int(input())
+        B = set(input().split())
+
+        print(A.issubset(B))
+
+
+# Check Strict Superset
+def check_strict_superset():
+    A = set(input().split())
+    n = int(input())
+
+    result = True
+
+    for i in range(n):
+        other = set(input().split())
+
+        if not A > other:
+            result = False
+
+    print(result)
