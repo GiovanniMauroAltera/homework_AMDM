@@ -803,3 +803,160 @@ def fibonacci(n):
 def map_and_lambda():
     n = int(input())
     print(list(map(cube, fibonacci(n))))
+
+
+# Detect Floating Point Number
+def detect_floating_point_number():
+    import re
+
+    t = int(input())
+
+    for i in range(t):
+        s = input()
+
+        if re.match(r"^[+-]?[0-9]*\.[0-9]+$", s):
+            print(True)
+        else:
+            print(False)
+
+
+# Re.split()
+def re_split():
+    import re
+
+    regex_pattern = r"[,.]"
+
+    print("\n".join(re.split(regex_pattern, input())))
+
+
+# Group(), Groups() & Groupdict()
+def group_groups_groupdict():
+    import re
+
+    s = input()
+
+    match = re.search(r"([a-zA-Z0-9])\1", s)
+
+    if match:
+        print(match.group(1))
+    else:
+        print(-1)
+
+
+# Re.findall() & Re.finditer()
+def re_findall_finditer():
+    import re
+
+    s = input()
+
+    vowels = "aeiouAEIOU"
+    consonants = "qwrtypsdfghjklzxcvbnmQWRTYPSDFGHJKLZXCVBNM"
+
+    pattern = "(?<=[" + consonants + "])([" + vowels + "]{2,})(?=[" + consonants + "])"
+
+    found = re.findall(pattern, s)
+
+    if len(found) > 0:
+        for word in found:
+            print(word)
+    else:
+        print(-1)
+
+
+# Re.start() & Re.end()
+def re_start_end():
+    import re
+
+    s = input()
+    k = input()
+
+    matches = list(re.finditer("(?=(" + k + "))", s))
+
+    if len(matches) == 0:
+        print((-1, -1))
+    else:
+        for m in matches:
+            start = m.start(1)
+            end = m.end(1) - 1
+            print((start, end))
+
+
+# Regex Substitution
+def regex_substitution():
+    import re
+
+    n = int(input())
+
+    for i in range(n):
+        line = input()
+
+        line = re.sub(r"(?<= )&&(?= )", "and", line)
+        line = re.sub(r"(?<= )\|\|(?= )", "or", line)
+
+        print(line)
+
+
+# Validating Roman Numerals
+def validating_roman_numerals():
+    import re
+
+    regex_pattern = r"^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$"
+
+    print(str(bool(re.match(regex_pattern, input()))))
+
+
+# Validating phone numbers
+def validating_phone_numbers():
+    import re
+
+    n = int(input())
+
+    for i in range(n):
+        number = input()
+
+        if re.match(r"^[789][0-9]{9}$", number):
+            print("YES")
+        else:
+            print("NO")
+
+
+# Validating and Parsing Email Addresses
+def validating_email_addresses():
+    import re
+    import email.utils
+
+    n = int(input())
+
+    for i in range(n):
+        line = input()
+
+        name, address = email.utils.parseaddr(line)
+
+        if re.match(r"^[A-Za-z][A-Za-z0-9._-]*@[A-Za-z]+\.[A-Za-z]{1,3}$", address):
+            print(email.utils.formataddr((name, address)))
+
+
+# Hex Color Code
+def hex_color_code():
+    import re
+
+    n = int(input())
+
+    depth = 0
+
+    for i in range(n):
+        line = input()
+
+        if depth > 0:
+            text = line
+        elif "{" in line:
+            text = line.split("{", 1)[1]
+        else:
+            text = ""
+
+        colors = re.findall(r"#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{3})(?!\w)", text)
+
+        for color in colors:
+            print(color)
+
+        depth = depth + line.count("{") - line.count("}")
