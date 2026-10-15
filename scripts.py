@@ -715,3 +715,69 @@ def calendar_module():
     days = ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"]
 
     print(days[number])
+
+
+# Zipped!
+def zipped():
+    n, x = map(int, input().split())
+
+    marks = []
+
+    for i in range(x):
+        subject = list(map(float, input().split()))
+        marks.append(subject)
+
+    for student in zip(*marks):
+        average = sum(student) / x
+        print("%.1f" % average)
+
+
+# Athlete Sort
+def athlete_sort():
+    nm = input().split()
+
+    n = int(nm[0])
+
+    m = int(nm[1])
+
+    arr = []
+
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    k = int(input())
+
+    def get_attribute(row):
+        return row[k]
+
+    arr.sort(key=get_attribute)
+
+    for row in arr:
+        print(" ".join(map(str, row)))
+
+
+# ginortS
+def ginorts():
+    s = input()
+
+    lower = []
+    upper = []
+    odd = []
+    even = []
+
+    for c in s:
+        if c.islower():
+            lower.append(c)
+        elif c.isupper():
+            upper.append(c)
+        elif int(c) % 2 == 1:
+            odd.append(c)
+        else:
+            even.append(c)
+
+    lower.sort()
+    upper.sort()
+    odd.sort()
+    even.sort()
+
+    print("".join(lower + upper + odd + even))
