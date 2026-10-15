@@ -960,3 +960,28 @@ def hex_color_code():
             print(color)
 
         depth = depth + line.count("{") - line.count("}")
+
+
+# XML 1 - Find the Score
+def get_attr_number(node):
+    total = len(node.attrib)
+
+    for child in node:
+        total = total + get_attr_number(child)
+
+    return total
+
+
+# XML2 - Find the Maximum Depth
+maxdepth = 0
+
+
+def depth(elem, level):
+    global maxdepth
+    level = level + 1
+
+    if level > maxdepth:
+        maxdepth = level
+
+    for child in elem:
+        depth(child, level)
