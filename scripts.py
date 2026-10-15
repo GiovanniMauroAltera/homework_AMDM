@@ -1,3 +1,4 @@
+# Python If-Else
 def python_if_else():
     n = int(input().strip())
 
@@ -11,12 +12,14 @@ def python_if_else():
         print("Not Weird")
 
 
+# Loops
 def loops():
     n = int(input())
     for i in range(n):
         print(i ** 2)
 
 
+# Write a function
 def is_leap(year):
     leap = False
 
@@ -30,6 +33,7 @@ def is_leap(year):
     return leap
 
 
+# Print Function
 def print_function():
     n = int(input())
     for i in range(1, n + 1):
@@ -37,6 +41,7 @@ def print_function():
     print()
 
 
+# List Comprehensions
 def list_comprehensions():
     x = int(input())
     y = int(input())
@@ -47,6 +52,7 @@ def list_comprehensions():
     print(result)
 
 
+# Find the Runner-Up Score!
 def runner_up_score():
     n = int(input())
     arr = map(int, input().split())
@@ -58,6 +64,7 @@ def runner_up_score():
     print(no_duplicates[-2])
 
 
+# Nested Lists
 def nested_lists():
     students = []
 
@@ -85,6 +92,7 @@ def nested_lists():
         print(name)
 
 
+# Finding the percentage
 def finding_the_percentage():
     n = int(input())
     student_marks = {}
@@ -102,6 +110,7 @@ def finding_the_percentage():
     print("%.2f" % average)
 
 
+# Lists
 def lists():
     N = int(input())
 
@@ -131,6 +140,7 @@ def lists():
             my_list.reverse()
 
 
+# Tuples
 def tuples():
     n = int(input())
     numbers = input().split()
@@ -144,6 +154,7 @@ def tuples():
     print(hash(t))
 
 
+# sWAP cASE
 def swap_case(s):
     result = ""
 
@@ -158,16 +169,19 @@ def swap_case(s):
     return result
 
 
+# String Split and Join
 def split_and_join(line):
     words = line.split(" ")
     result = "-".join(words)
     return result
 
 
+# What's Your Name?
 def print_full_name(first, last):
     print("Hello " + first + " " + last + "! You just delved into python.")
 
 
+# Mutations
 def mutate_string(string, position, character):
     letters = list(string)
     letters[position] = character
@@ -175,6 +189,7 @@ def mutate_string(string, position, character):
     return new_string
 
 
+# Find a string
 def count_substring(string, sub_string):
     count = 0
     length = len(sub_string)
@@ -187,6 +202,7 @@ def count_substring(string, sub_string):
     return count
 
 
+# String Validators
 def string_validators():
     s = input()
 
@@ -215,31 +231,28 @@ def string_validators():
     print(has_upper)
 
 
+# Text Alignment
 def text_alignment():
     thickness = int(input())  # This must be an odd number
     c = 'H'
 
-    # Top Cone
     for i in range(thickness):
         print((c*i).rjust(thickness-1) + c + (c*i).ljust(thickness-1))
 
-    # Top Pillars
     for i in range(thickness+1):
         print((c*thickness).center(thickness*2) + (c*thickness).center(thickness*6))
 
-    # Middle Belt
     for i in range((thickness+1)//2):
         print((c*thickness*5).center(thickness*6))
 
-    # Bottom Pillars
     for i in range(thickness+1):
         print((c*thickness).center(thickness*2) + (c*thickness).center(thickness*6))
 
-    # Bottom Cone
     for i in range(thickness):
         print(((c*(thickness-i-1)).rjust(thickness) + c + (c*(thickness-i-1)).ljust(thickness)).rjust(thickness*6))
 
 
+# Text Wrap
 def wrap(string, max_width):
     result = ""
 
@@ -250,6 +263,7 @@ def wrap(string, max_width):
     return result.strip()
 
 
+# Designer Door Mat
 def designer_door_mat():
     n, m = map(int, input().split())
 
@@ -269,6 +283,7 @@ def designer_door_mat():
         print(row)
 
 
+# String Formatting
 def print_formatted(number):
     width = len(bin(number)) - 2
 
@@ -281,6 +296,7 @@ def print_formatted(number):
         print(decimal.rjust(width), octal.rjust(width), hexadecimal.rjust(width), binary.rjust(width))
 
 
+# Alphabet Rangoli
 def print_rangoli(size):
     letters = "abcdefghijklmnopqrstuvwxyz"
     width = 4 * size - 3
@@ -305,6 +321,7 @@ def print_rangoli(size):
         print(row)
 
 
+# Capitalize!
 def solve(s):
     words = s.split(" ")
     new_words = []
@@ -320,6 +337,7 @@ def solve(s):
     return result
 
 
+# The Minion Game
 def minion_game(string):
     vowels = "AEIOU"
     length = len(string)
@@ -341,6 +359,7 @@ def minion_game(string):
         print("Draw")
 
 
+# Merge the Tools!
 def merge_the_tools(string, k):
     for i in range(0, len(string), k):
         block = string[i:i + k]
