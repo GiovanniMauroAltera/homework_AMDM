@@ -27,8 +27,3 @@ I solved exercises from these HackerRank sections:
 - Closures and Decorators
 - Numpy
 
-## Notes
-
-- I did not solve all the exercises of Collections, Regex and Parsing, and Numpy.
-- The exercises *Tuples* and *Exceptions* do not pass on HackerRank, even with correct code. The expected output was made with an old version of Python.
-- Problem 2 is not done.
