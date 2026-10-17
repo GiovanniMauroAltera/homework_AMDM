@@ -6,16 +6,29 @@ The homework is about learning Python with the exercises on [HackerRank](https:/
 
 ## What is in this repository
 
-- `scripts.py`: the Python code of the exercises I solved. Each exercise is a function.
-- `printouts/`: the PDF and screenshots of my HackerRank submissions.
+- `scripts.py`: the Python code of the exercises I solved. Each exercise is a function, and a comment above it gives the exercise name.
+- `printouts/`: the PDF with my HackerRank submissions.
 - `README.md`: this file.
 
-## Topics
+## Problem 1: Python challenges
 
-The exercises are from these HackerRank sections:
+I solved exercises from these HackerRank sections:
 
 - Introduction
 - Basic Data Types
 - Strings
+- Sets
+- Collections
+- Date and Time
+- Built-Ins
+- Python Functionals
+- Regex and Parsing
+- XML
+- Closures and Decorators
+- Numpy
 
-More sections will be added as I finish them.
+## Notes
+
+- I did not solve all the exercises of Collections, Regex and Parsing, and Numpy.
+- The exercises *Tuples* and *Exceptions* do not pass on HackerRank, even with correct code. The expected output was made with an old version of Python.
+- Problem 2 is not done.
