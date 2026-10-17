@@ -1026,3 +1026,163 @@ def person_lister(f):
 @person_lister
 def name_format(person):
     return ("Mr. " if person[3] == "M" else "Ms. ") + person[0] + " " + person[1]
+
+
+# Arrays
+def arrays(arr):
+    import numpy
+
+    reversed_list = arr[::-1]
+    return numpy.array(reversed_list, float)
+
+
+# Shape and Reshape
+def shape_and_reshape():
+    import numpy
+
+    numbers = list(map(int, input().split()))
+
+    array = numpy.array(numbers)
+
+    print(numpy.reshape(array, (3, 3)))
+
+
+# Transpose and Flatten
+def transpose_and_flatten():
+    import numpy
+
+    n, m = map(int, input().split())
+
+    rows = []
+
+    for i in range(n):
+        row = list(map(int, input().split()))
+        rows.append(row)
+
+    array = numpy.array(rows)
+
+    print(numpy.transpose(array))
+    print(array.flatten())
+
+
+# Concatenate
+def concatenate():
+    import numpy
+
+    n, m, p = map(int, input().split())
+
+    first = []
+
+    for i in range(n):
+        row = list(map(int, input().split()))
+        first.append(row)
+
+    second = []
+
+    for i in range(m):
+        row = list(map(int, input().split()))
+        second.append(row)
+
+    array_one = numpy.array(first)
+    array_two = numpy.array(second)
+
+    print(numpy.concatenate((array_one, array_two), axis=0))
+
+
+# Zeros and Ones
+def zeros_and_ones():
+    import numpy
+
+    shape = tuple(map(int, input().split()))
+
+    print(numpy.zeros(shape, dtype=int))
+    print(numpy.ones(shape, dtype=int))
+
+
+# Eye and Identity
+def eye_and_identity():
+    import numpy
+    numpy.set_printoptions(legacy='1.13')
+
+    n, m = map(int, input().split())
+
+    print(numpy.eye(n, m))
+
+
+# Array Mathematics
+def array_mathematics():
+    import numpy
+
+    n, m = map(int, input().split())
+
+    first = []
+
+    for i in range(n):
+        row = list(map(int, input().split()))
+        first.append(row)
+
+    second = []
+
+    for i in range(n):
+        row = list(map(int, input().split()))
+        second.append(row)
+
+    A = numpy.array(first)
+    B = numpy.array(second)
+
+    print(A + B)
+    print(A - B)
+    print(A * B)
+    print(A // B)
+    print(A % B)
+    print(A ** B)
+
+
+# Floor, Ceil and Rint
+def floor_ceil_and_rint():
+    import numpy
+    numpy.set_printoptions(legacy='1.13')
+
+    A = numpy.array(list(map(float, input().split())))
+
+    print(numpy.floor(A))
+    print(numpy.ceil(A))
+    print(numpy.rint(A))
+
+
+# Sum and Prod
+def sum_and_prod():
+    import numpy
+
+    n, m = map(int, input().split())
+
+    rows = []
+
+    for i in range(n):
+        row = list(map(int, input().split()))
+        rows.append(row)
+
+    array = numpy.array(rows)
+
+    column_sums = numpy.sum(array, axis=0)
+
+    print(numpy.prod(column_sums))
+
+
+# Min and Max
+def min_and_max():
+    import numpy
+
+    n, m = map(int, input().split())
+
+    rows = []
+
+    for i in range(n):
+        row = list(map(int, input().split()))
+        rows.append(row)
+
+    array = numpy.array(rows)
+
+    row_minimums = numpy.min(array, axis=1)
+
+    print(numpy.max(row_minimums))
